@@ -2520,8 +2520,14 @@
     toGregorian: toGregorian,
   };
 
-  hMoment.iMonthsShort = iMonthNames.iMonthsShort;
-  hMoment.iMonths = iMonthNames.iMonths;
+  hMoment.iMonthsShort = function () {
+    var oldLocale = moment.locale();
+    if (oldLocale.substring(1, 2) == 'ar') {
+      return iMonthNames.iMonthsShort;
+    } else {
+      return moment.localDate()._iMonthsShort;
+    }
+  };
 
   return hMoment;
 
