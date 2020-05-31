@@ -2522,7 +2522,7 @@
 
   hMoment.iMonthsShort = function () {
     var oldLocale = moment.locale();
-    if (oldLocale.substring(1, 3) == 'ar') {
+    if (oldLocale.substring(0, 2) == 'ar') {
       return iMonthNames.iMonthsShort;
     } else {
       return moment.localeData()._iMonthsShort;
